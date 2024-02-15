@@ -8,7 +8,6 @@ type SearchBarType = {
 const SearchBar = (props: SearchBarType) => {
   return (
     <TextField
-      id="outlined-basic"
       label="Search by ID"
       variant="outlined"
       onChange={props.handleChange}

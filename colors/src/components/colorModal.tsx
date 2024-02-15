@@ -32,9 +32,9 @@ const ColorModal = (props: ColorModalType) => {
           {props.item &&
             `ID: ${
               props.item.id
-            }Name: ${props.item.name.toUpperCase()}Pantone: ${
+            } Name: ${props.item.name.toUpperCase()} Pantone: ${
               props.item.pantone_value
-            }Year: ${props.item.year}Color: ${props.item.color}`}
+            } Year: ${props.item.year} Color: ${props.item.color}`}
         </Typography>
       </Box>
     </Modal>

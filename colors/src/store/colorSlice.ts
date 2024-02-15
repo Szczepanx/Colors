@@ -12,8 +12,6 @@ export type Color ={
 type InitialState = {
     loading:boolean,
     colors : Color[],
-    page: number,
-    per_page: number,
     error:string
 }
 
@@ -21,15 +19,13 @@ type InitialState = {
 const initialState : InitialState = {
     loading : false,
     colors : [],
-    page : 0,
-    per_page : 0,
     error :''
 }
 
 export const fetchColors = createAsyncThunk('color/fetchColors', () => {
     return axios
       .get('https://reqres.in/api/products')
-      .then(response => response.data)
+      .then(response => response.data.data)
   })
   
   const colorsSlice = createSlice({
@@ -44,9 +40,7 @@ export const fetchColors = createAsyncThunk('color/fetchColors', () => {
         fetchColors.fulfilled,
         (state, action) => {
           state.loading = false
-          state.page = action.payload.page
-          state.per_page = action.payload.per_page
-          state.colors = action.payload.data
+          state.colors = action.payload
           state.error = ''
         }
       )

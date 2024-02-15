@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import { Color, fetchColors } from "../store/colorSlice";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import SearchBar from "../components/searchBar";
 import ColorModal from "../components/colorModal";
 import ColorsTable from "../components/colorsTable";
@@ -39,7 +39,17 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <Box>
+    <Box
+      sx={{
+        padding: 3,
+        gap: 7,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+      }}
+    >
+      <Typography fontSize={50}>COLORS APP</Typography>
       <SearchBar value={value} handleChange={handleChange} />
       <ColorsTable colors={filteredColors} handleOpen={handleOpen} />
       <ColorModal handleClose={handleClose} item={selectedItem} open={open} />

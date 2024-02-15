@@ -1,4 +1,5 @@
 import {
+  Card,
   Paper,
   Table,
   TableBody,
@@ -26,7 +27,10 @@ const ColorsTable = (props: ColorsTableType) => {
   };
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer
+      component={Card}
+      sx={{ maxWidth: 1000, bgcolor: "whitesmoke" }}
+    >
       <Table>
         <TableBody>
           <TableRow>
